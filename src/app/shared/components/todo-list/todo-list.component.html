@@ -1,0 +1,17 @@
+<h4>Todo List</h4>
+
+
+
+    <input placeholder="Add todo" type="text" [(ngModel)] = "todo" />
+    <button (click) = "add()">Add Todo</button>
+
+
+<ul>
+    @for(todo of todoList; track todo; let index = $index){
+        <div style="display: flex;">
+            <li style="margin-right: 10;">{{index + 1}}. {{todo}}</li>
+            <button (click) = "delete(index)">X</button>
+        </div>
+    }
+
+</ul>
